@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Edit Student{% endblock %}
+{% block content %}
+<h2>Edit Student Details</h2>
+
+<form method="POST" action="{{ url_for('edit_student', id=student.id) }}">
+    <label>Name:</label>
+    <input type="text" name="name" value="{{ student.name }}" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" value="{{ student.email }}" required>
+
+    <label>Course:</label>
+    <input type="text" name="course" value="{{ student.course }}" required>
+
+    <button type="submit" class="btn">Update Student</button>
+</form>
+{% endblock %}
